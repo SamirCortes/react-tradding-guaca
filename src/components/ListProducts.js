@@ -9,9 +9,10 @@ function ListProducts(){
             <thead>
                 <tr>
                 <th>#</th>
-                <th>First Name</th>
-                <th>Last Name</th>
-                <th>Username</th>
+                <th>type product</th>
+                <th>Name product</th>
+                <th>weight</th>
+                <th>price</th>
                 </tr>
             </thead>
             <tbody>
@@ -20,17 +21,20 @@ function ListProducts(){
                 <td>Mark</td>
                 <td>Otto</td>
                 <td>@mdo</td>
+                <th>150000</th>
                 </tr>
                 <tr>
                 <td>2</td>
                 <td>Jacob</td>
                 <td>Thornton</td>
                 <td>@fat</td>
+                <th>150000</th>
                 </tr>
                 <tr>
                 <td>3</td>
                 <td colSpan="2">Larry the Bird</td>
                 <td>@twitter</td>
+                <th>150000</th>
                 </tr>
             </tbody>
             </Table>
