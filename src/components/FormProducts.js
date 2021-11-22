@@ -6,12 +6,12 @@ import Col from 'react-bootstrap/Col';
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
 
-function FormProducts(){
-
+function FormProducts(props){
+      const { show, onClose } = props;
        return (
-       <Modal.Dialog>
+       <Modal show={show} onHide={onClose}>
         <Modal.Header closeButton>
-          <Modal.Title>Modal title</Modal.Title>
+          <Modal.Title>Nuevo producto</Modal.Title>
         </Modal.Header>
       
         <Modal.Body>
@@ -60,7 +60,7 @@ function FormProducts(){
           <Button variant="secondary">Close</Button>
           <Button variant="primary">Save changes</Button>
         </Modal.Footer>
-      </Modal.Dialog>
+      </Modal>
       );
 
 
