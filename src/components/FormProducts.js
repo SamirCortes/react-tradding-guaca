@@ -16,14 +16,12 @@ function FormProducts(props){
 
       function handleSave(){
         console.log(localStorage.getItem('products'));
-        console.log(Array.isArray(localStorage.getItem('products')));
-        if(Array.isArray(JSON.parse(localStorage.getItem('products')))){
-          const products = JSON.parse(localStorage.getItem('products'));
-          const arraySave = [...products, objForm];
-          localStorage.setItem('products', JSON.stringify(arraySave));
-          setProducts(arraySave);
-          onClose();
-        }
+        console.log(Array.isArray(localStorage.getItem('products')));        
+        const products = JSON.parse(localStorage.getItem('products')) || [];
+        const arraySave = [...products, objForm];
+        localStorage.setItem('products', JSON.stringify(arraySave));
+        setProducts(arraySave);
+        onClose();      
       }
 
       function handleChange() {
