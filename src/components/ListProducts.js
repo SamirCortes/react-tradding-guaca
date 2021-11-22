@@ -1,14 +1,17 @@
-import React from 'react';
+import React, {useState} from 'react';
 
 import Table from 'react-bootstrap/Table';
+import Button from 'react-bootstrap/Button';
 
-function ListProducts(){
-    let products = [{
-        tipo: 'ddd',
-        nombre: 'motoicleta',
-        peso: '',
-        valor: '1500000'
-    }]
+function ListProducts(props){    
+    const { products, setProducts, } = props;    
+
+    function handleDelete(i){        
+        const products = JSON.parse(localStorage.getItem('products'));
+        products.splice(i,1);
+        localStorage.setItem('products', JSON.stringify(products));
+        setProducts(products);
+    }        
 
     return (
         <div>
@@ -18,7 +21,8 @@ function ListProducts(){
                 <th>Tipo</th>
                 <th>Nombre</th>
                 <th>Peso</th>
-                <th>Valor</th>                
+                <th>Valor</th>
+                <th>Acción</th>               
                 </tr>
             </thead>
             <tbody>
@@ -29,7 +33,10 @@ function ListProducts(){
                             <td >{value.tipo}</td>
                             <td >{value.nombre}</td>
                             <td >{value.peso}</td>
-                            <td >{value.valor}</td>
+                            <td >{value.precio}</td>
+                            <td >                                
+                                <Button variant="danger" onClick={()=>handleDelete(index)}>Eliminar</Button>
+                            </td>
                         </tr>
                     )                    
                 })}                               
