@@ -18,7 +18,7 @@ function FormProducts(props){
         <Form>
               <Row className="mb-3">
               <Form.Group as={Col} controlId="formGridEmail">
-                <Form.Label>type product</Form.Label>
+                <Form.Label>Tipo Producto</Form.Label>
                 <Form.Select defaultValue="Choose...">
                     <option>vehiculo</option>
                     <option>electrodomestico</option>
@@ -28,37 +28,29 @@ function FormProducts(props){
               </Form.Group>
 
               <Form.Group as={Col} controlId="formGridPassword">
-                <Form.Label>name produc</Form.Label>
+                <Form.Label>Nombre Producto</Form.Label>
                 <Form.Control type="password" placeholder="" />
               </Form.Group>
               </Row>
 
               <Form.Group className="mb-3" controlId="formGridAddress1">
-              <Form.Label>weight</Form.Label>
+              <Form.Label>Valor</Form.Label>
               <Form.Control placeholder="" />
               </Form.Group>
 
               <Form.Group className="mb-3" controlId="formGridAddress2">
-              <Form.Label>price</Form.Label>
+              <Form.Label>Precio</Form.Label>
               <Form.Control placeholder="" />
               </Form.Group>
 
               
 
-              <Form.Group className="mb-3" id="formGridCheckbox">
-              <Form.Check type="checkbox" label="Check me out" />
-              </Form.Group>
-
-              <Button variant="primary" type="submit">
-              Submit
-              </Button>
           </Form>
 
         </Modal.Body>
       
         <Modal.Footer>
-          <Button variant="secondary">Close</Button>
-          <Button variant="primary">Save changes</Button>
+          <Button variant="primary">Guardar</Button>
         </Modal.Footer>
       </Modal>
       );
