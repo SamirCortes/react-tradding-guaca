@@ -1,29 +1,42 @@
 import React, { useState } from 'react';
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,  
+} from "react-router-dom";
 import './App.css';
-import Button from 'react-bootstrap/Button';
-import ListProducts from './components/ListProducts.js';
-import FormProducts from './components/FormProducts.js';
 
+import Home from './pages/Home.js';
+import Products from './pages/Products.js';
+import Navbar from 'react-bootstrap/Navbar';
+import Container from 'react-bootstrap/Container';
+import Nav from 'react-bootstrap/Nav';
 
-function App() {
-  const [show, setShow] = useState(false);  
-  const [products, setProducts] = useState(JSON.parse(localStorage.getItem('products')) || []);
-
-  const handleClose = () => setShow(false);
-  const handleShow = () => setShow(true);
+function App() {  
 
   return (
-    <div className="App">
-      <header className="App-header">
+    <Router>
       <div>
-        <h1>Productos compraventa <Button variant="primary" onClick={handleShow}>Nuevo producto</Button></h1>
-        
-      </div>        
-      <ListProducts handleForm={handleShow} products={products} setProducts={setProducts} ></ListProducts> 
-      <FormProducts show={show} onClose={handleClose} setProducts={setProducts} ></FormProducts>
-
-      </header>
-    </div>
+      {/* Estilos del menu */}
+      <Navbar bg="dark" variant="dark">
+        <Container>        
+        <Nav className="me-auto">
+          <Nav.Link href="./">Home</Nav.Link>
+          <Nav.Link href="productos">Productos</Nav.Link>          
+        </Nav>
+        </Container>
+      </Navbar>        
+      {/* Declaro las rutas */}
+      <Switch>
+        <Route exact path="/">
+          <Home />
+        </Route>
+        <Route path="/productos">
+          <Products />
+        </Route>          
+      </Switch>
+      </div>
+    </Router>    
   );
 }
 
